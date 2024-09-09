@@ -99,25 +99,25 @@ import shap
 
 explainer = shap.TreeExplainer(rf_model)
 shap_values = explainer.shap_values(X_test)
-shap.summary_plot(shap_values, X_test)
+#shap.summary_plot(shap_values, X_test)
 
-from lime.lime_tabular import LimeTabularExplainer
+#from lime.lime_tabular import LimeTabularExplainer
 
 # Example feature names - replace with your actual feature names
-feature_names = ['age', 'total_visits', 'average_purchase_value', 'last_purchase_days_ago']
+#feature_names = ['age', 'total_visits', 'average_purchase_value', 'last_purchase_days_ago']
 
 # Initialize LIME explainer
-explainer = LimeTabularExplainer(
-    training_data=X_train, 
-    feature_names=feature_names, 
-    class_names=['No Churn', 'Churn'], 
-    mode='classification'
-)
+#explainer = LimeTabularExplainer(
+#    training_data=X_train, 
+#    feature_names=feature_names, 
+#    class_names=['No Churn', 'Churn'], 
+#    mode='classification'
+#)
 
 # Example explanation
-instance = X_test[0]  # Example instance from the test set
-explanation = explainer.explain_instance(instance, model.predict_proba)
-explanation.show_in_notebook()
+#instance = X_test[0]  # Example instance from the test set
+#explanation = explainer.explain_instance(instance, model.predict_proba)
+#explanation.show_in_notebook()
 
 # Save the model
 with open('model.pk1', 'wb') as file:
