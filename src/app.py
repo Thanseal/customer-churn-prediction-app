@@ -14,7 +14,7 @@ def predict_churn():
     df = pd.DataFrame(data)
     
     #Assuming the features are passed in the correct order
-    features = df[['age', 'annual_income', 'account_balance']]
+    features = df[['age', 'total_visits', 'average_purchase_value', 'last_purchase_days_ago']]
     
     #Make predictions
     predictions = predict(model, features)
